@@ -180,7 +180,9 @@ this.year=yea
     this.am=false
     this.pm=true
  }
-this.ly=!this.ly
+},
+default(){
+    this.ly==false
 }
 
 }
