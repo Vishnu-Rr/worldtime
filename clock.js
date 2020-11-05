@@ -180,7 +180,6 @@ this.year=yea
     this.am=false
     this.pm=true
  }
- this.ly=false
 }
 
 }
