@@ -134,12 +134,12 @@ methods: {
         });
     },
     onchange(){
-        $.getJSON("http://api.openweathermap.org/data/2.5/weather?q="+this.selectedTimezone.title+"&appid=2558f98220e53776243967987971b0a2", (response) => {
+                 $.getJSON("http://api.openweathermap.org/data/2.5/weather?q="+this.selectedTimezone.title+"&appid=2558f98220e53776243967987971b0a2", (response) => {
             var temper=Math.round(response.main.temp - 273.15)
-            var des=response.weather[0].description       
-            this.weatherData=response.weather[0].icon
-            this.temper=temper
-            this.des=des
+               var des=response.weather[0].description       
+        this.weatherData=response.weather[0].icon
+                this.temper=temper
+                this.des=des
  
     });
     },
