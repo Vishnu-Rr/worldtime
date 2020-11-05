@@ -141,9 +141,7 @@ $.getJSON("https://api.openweathermap.org/data/2.5/weather?lat="+lati+"&lon="+lo
                 this.weatherData=des
                 this.temper=temper
                 this.des=response.weather[0].description 
-                
-setInterval(this.myfuns,1000)
-})
+                })
 },
     changes(){
 this.change()
