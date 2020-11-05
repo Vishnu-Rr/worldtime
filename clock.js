@@ -126,6 +126,8 @@ des:"" ,
 
     window.navigator.geolocation
    .getCurrentPosition(this.myfuns);
+
+   setInterval(this.myfuns,6000)
  },
    
 methods: {
