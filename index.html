@@ -1,0 +1,76 @@
+<html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    <style>
+
+.cha{
+  width: 60px;
+  height: 6px;
+  background-color: red;
+  background-size: 45px;
+}
+        .full{
+          background: rgb(131,58,180);
+          background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,57,1) 56%, rgba(252,176,69,1) 100%);
+             text-transform: capitalize; 
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+ }
+   .clock{
+            margin: auto;
+            background-color:white;
+            width: 417px;
+            border-radius: 20px;
+            border-bottom-left-radius: 85px;
+            border-top-right-radius: 85px;
+            height: 354px;
+            position: relative;
+            top: 150px;           
+
+        }
+ 
+        .line{
+          border: 5px solid;
+          margin-left: 190px;
+          width: 450px;
+          height: 200px;
+          border-top-left-radius: 225px;
+          border-top-right-radius:225px ;
+border-bottom: 0;
+position: fixed;  
+bottom: 0;      }
+    </style>
+</head>
+
+<body  class="full">
+  <div id="main">
+
+  <div class="clock" v-on:load="mount()">
+      <div style="padding-left:20px;padding-right: 20px;">
+    <img src="calendar.svg"  width="30px" height="45px" style="float: left;position: relative;top:9px">
+        <h3 style="padding-top: 20px; font-size: 22px;position: relative;left: 8px; ">{{day}}       ,      {{date}}</h3>
+    <h3 style="margin-top: -9px;">{{month}}         {{year}}</h3>
+    <h1 style="text-align: center;margin-top: 9px; font-size:60px ;float: left;margin-left: 14px;">{{hrs}}  </h1>
+  <img src="post-meridiem.png"  width="35px" v-if="am" height="35px" style="position: relative;top:24px; left:10;">
+  <img src="ante-meridiem.png"  width="35px" v-if="pm" height="35px" style="position: relative;top:26px; left:10;">
+<select style="margin-left:120px;width: 111px;height: 25px;font-size: 17px;"  v-model="selectedTimezone"  @change="change(),onchange()">
+  <option v-for="countrys in countrys"  :value="countrys"   >{{countrys.title }}</option>
+
+</select>
+</div>
+<img style=" float: left;   position: relative;left: 10px;top: 15px;" :src="'http://openweathermap.org/img/wn/'+ weatherData + '@2x.png'">
+
+<h3 style="margin-left:12px;position: relative;
+top: 7px;font-size: 35px;">{{temper}}°C</h3>
+<h4 style="float: right;position: relative;
+top: -85px;
+right: 12px;
+font-size: 20px;">{{des}}</h4>
+
+</div>
+</div>
+</body>
+ <script src="clock.js"></script>
+
+</html>
