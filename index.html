@@ -54,7 +54,7 @@ bottom: 0;      }
     <h1 style="text-align: center;margin-top: 9px; font-size:60px ;float: left;margin-left: 14px;">{{hrs}}  </h1>
   <img src="post-meridiem.png"  width="35px" v-if="am" height="35px" style="position: relative;top:24px; left:10;">
   <img src="ante-meridiem.png"  width="35px" v-if="pm" height="35px" style="position: relative;top:26px; left:10;">
-<select style="margin-left:132px;width: 111px;height: 25px;font-size: 17px;"  v-model="selectedTimezone"  @change="change(),onchange(),default()">
+<select style="margin-left:132px;width: 111px;height: 25px;font-size: 17px;"  v-model="selectedTimezone"  @change="changes()">
   <option v-for="countrys in countrys"  :value="countrys"   >{{countrys.title }}</option>
 
 </select>

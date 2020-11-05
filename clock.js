@@ -123,6 +123,11 @@ des:"" ,
    setInterval(this.onchange,60000)
  },
 methods: {
+    changes(){
+this.onchange()
+this.change()
+this.def()
+    },
     india(){
         $.getJSON("https://api.openweathermap.org/data/2.5/weather?q="+this.weather+"&appid=2558f98220e53776243967987971b0a2", (response) => {
     
@@ -181,8 +186,9 @@ this.year=yea
     this.pm=true
  }
 },
-default(){
-    this.ly==false
+
+def(){
+    this.ly=false
 }
 
 }
