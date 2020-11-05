@@ -1,6 +1,7 @@
 var app = new Vue({
     el:'#main',
     data:{
+        ly:true,
         countrys:[
            {
             title:"Singapore",
@@ -179,6 +180,7 @@ this.year=yea
     this.am=false
     this.pm=true
  }
+ this.ly=false
 }
 
 }
