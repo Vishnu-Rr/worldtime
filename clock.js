@@ -68,8 +68,9 @@ time:"asia/calcutta"
              
          }
        ],
+       citys:"chennai",
         selectedTimezone: 'Asia/calcutta',
-        weather:"mumbai",
+        weather:"chennai",
         temper:'',
         des:'',
         sr:'',
