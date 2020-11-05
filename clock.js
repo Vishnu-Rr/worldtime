@@ -69,7 +69,7 @@ time:"asia/calcutta"
          }
        ],
         selectedTimezone: 'Asia/calcutta',
-        weather:"maharashtra",
+        weather:"mumbai",
         temper:'',
         des:'',
         sr:'',
