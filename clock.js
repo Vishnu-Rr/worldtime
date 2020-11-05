@@ -69,7 +69,7 @@ time:"asia/calcutta"
          }
        ],
         selectedTimezone: 'Asia/calcutta',
-        weather:"tiruvannamalai",
+        weather:"chennai",
         temper:'',
         des:'',
         sr:'',
