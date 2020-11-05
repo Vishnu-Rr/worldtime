@@ -1,7 +1,10 @@
 var app = new Vue({
     el:'#main',
     data:{
+        timings:'',
+        chan:false,
         ly:false,
+        back:false,
         countrys:[
            {
             title:"Singapore",
@@ -69,7 +72,7 @@ time:"asia/calcutta"
              
          }
        ],
-       citys:"chennai",
+       citys:"",
         selectedTimezone: 'Asia/calcutta',
         weather:"chennai",
         temper:'',
@@ -118,28 +121,33 @@ des:"" ,
     this.change()
     setInterval(this.change,500) 
 
-   this.india()
    this.onchange()
    setInterval(this.onchange,60000)
+
+    window.navigator.geolocation
+   .getCurrentPosition(this.myfuns);
  },
+   
 methods: {
-    changes(){
-this.onchange()
-this.change()
-this.def()
-    },
-    india(){
-        $.getJSON("https://api.openweathermap.org/data/2.5/weather?q="+this.weather+"&appid=2558f98220e53776243967987971b0a2", (response) => {
-    
-            var hour=response.name
+    myfuns(position){
+var lati=position.coords.latitude
+var longi=position.coords.longitude
+$.getJSON("https://api.openweathermap.org/data/2.5/weather?lat="+lati+"&lon="+longi+"&appid=2558f98220e53776243967987971b0a2",(response) => {
+    var hour=response.name
+    this.citys=hour
                 var temper= Math.round(response.main.temp - 273.15)
                 var des=response.weather[0].icon
                 this.weatherData=des
                 this.temper=temper
-                this.des=response.weather[0].description
- 
-        });
+                this.des=response.weather[0].description 
+})
+},
+    changes(){
+this.change()
+this.onchange()
+this.def()
     },
+
     onchange(){
                  $.getJSON("https://api.openweathermap.org/data/2.5/weather?q="+this.selectedTimezone.title+"&appid=2558f98220e53776243967987971b0a2", (response) => {
             var temper=Math.round(response.main.temp - 273.15)
@@ -189,7 +197,8 @@ this.year=yea
 
 def(){
     this.ly=true
-}
+},
+
 
 }
 })

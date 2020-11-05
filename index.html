@@ -5,19 +5,15 @@
 
     <style>
 
-.cha{
-  width: 60px;
-  height: 6px;
-  background-color: red;
-  background-size: 45px;
-}
+
 .clas{
   visibility: hidden;
 }
         .full{
           background: rgb(131,58,180);
-          background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,57,1) 56%, rgba(252,176,69,1) 100%);
-             text-transform: capitalize; 
+background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,57,1) 56%, rgba(252,176,69,1) 100%);
+    
+        text-transform: capitalize; 
 font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
  }
    .clock{
@@ -42,14 +38,18 @@ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida San
           border-top-right-radius:225px ;
 border-bottom: 0;
 position: fixed;  
-bottom: 0;      }
+bottom: 0;   
+   }
+ 
+
     </style>
+    
 </head>
-
 <body  class="full">
-  <div id="main">
+  <div id="main" >
 
-  <div class="clock" v-on:load="mount()">
+
+  <div class="clock" >
       <div style="padding-left:20px;padding-right: 20px;">
     <img src="calendar.svg"  width="30px" height="45px" style="float: left;position: relative;top:9px">
         <h3 style="padding-top: 20px; font-size: 22px;position: relative;left: 8px; ">{{day}}       ,      {{date}}</h3>
@@ -62,7 +62,7 @@ bottom: 0;      }
 
 </select>
 </div>
-<p style="text-align: center;" v-bind:class="{'clas':ly}">Default City:{{citys}}</p>
+<p style="text-align: center;" v-bind:class="{'clas':ly}">Your Location:{{citys}}</p>
 <img style=" float: left;   position: relative;left: 10px;top: -41px;" :src="'https://openweathermap.org/img/wn/'+ weatherData + '@2x.png'">
 
 <h3 style="margin-left:12px;position: relative;
